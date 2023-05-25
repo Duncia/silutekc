@@ -3,7 +3,7 @@
 Website HEADER part.
 
 - Includes <head> section
-- Top header section with logo and menus
+- Top header section with logo and menus.
 */
 
 ?>
