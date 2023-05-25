@@ -1,0 +1,340 @@
+.home-hero{
+    &__title{
+        position: relative;
+        z-index: 5;
+        max-width: 100%;
+        box-shadow: 0px 4px 80px rgba(175, 173, 181, 0.2);
+        padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+        background-color: $color-white;
+        text-align: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        @include biggerLaptop{
+            max-width: 80rem;
+            margin: auto;
+            margin-top: 2rem;  
+        }; 
+        h1{
+            font-size: 2.5rem;
+            @include tablet {
+                font-size: 3.2rem;
+            };
+            @include smallLaptop {
+                font-size: 4.4rem;
+            };
+        }
+    }
+
+    .hp-slider{
+        position: relative;
+        margin-top: -4rem;
+        width: 100%;
+        padding-bottom: calc(55%);
+        @include tablet {
+            padding-bottom: calc(52%);
+        }; 
+        @include smallLaptop {
+            padding-bottom: calc(33%);
+        }; 
+        @include desktop{
+            padding-bottom: calc(32%);
+        }; 
+        @include largeScreen{
+            padding-bottom: calc(32%);
+        }; 
+        .slide{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            /* THIS creates the animation! */
+            //transition: transform 1s;
+        }
+          /* IN THE END */
+        overflow: hidden;
+    }
+    .dots {
+        margin-top: 2rem;
+        &__dot {
+            border: none;
+            background-color: $color-paragraph;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        &__dot:last-child {
+            margin: 0;
+        }
+          
+        &__dot--active {
+            background-color: $color-button-blue-hover;
+        }
+          
+      }
+    &__image{
+        position: relative;
+
+        picture{
+            margin: 0;
+            .hh-img{
+                /*
+                aspect-ratio: 2/2;
+                @include smallLaptop {
+                    aspect-ratio: 1640/480;
+                }; 
+                */
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.hp-news{
+    position: relative;
+    &__left{
+        h2{
+            color: $color-white;
+        }
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-bg-grey;
+        background: url('../../img/news-bg-grey.webp');
+        background-size: 100%;
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    &__items{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+        column-gap: 3rem;
+        @include smallLaptop {
+            grid-template-columns: 1fr 1fr;
+        };
+        @include largeScreen {
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 5rem;
+            column-gap: 5rem;
+        };
+        &--only-2{
+            @include largeScreen {
+                grid-template-columns: 1fr 1fr !important;
+                row-gap: 5rem;
+                column-gap: 5rem;
+            };
+        }
+        &--only-1{
+            @include largeScreen {
+                grid-template-columns: 1fr !important;
+                row-gap: 5rem;
+                column-gap: 5rem;
+            };
+        }
+
+        .hp-news__item{
+            background-color: $color-white;
+            padding: 2.5rem;
+            @include smallLaptop {
+                padding: 4rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }; 
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            /*
+            @include biggerLaptop {
+                max-width: none;
+            }; 
+            */
+            box-shadow: 0px 4px 100px rgba(175, 173, 181, 0.1);
+            width: 100%;
+            &--date{
+                color: $color-button-blue-hover;
+            }
+            &--text{
+                color: $color-paragraph-lighter;
+            }
+            &--button{
+                color: $color-button-blue-hover !important;
+                font-weight: 700;
+            }
+        }
+        .hp-news__item:nth-of-type(3){
+            display: none;
+            @include largeScreen {
+                display: flex;
+            }; 
+        }
+    }
+    &__right-img{
+        background-image: url('../../img/img-news-right.jpg');
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: calc(100% - 270px);
+        @media screen and (min-width: 350px) {
+            right: calc(100% - 320px);
+        }; 
+        @include smallLaptop {
+            right: calc(100% - 430px);
+        }; 
+        bottom: 0;
+        left: calc(((100vw - 100%) / 2) * -1);
+        background-size: cover;
+    }
+}
+
+.hp-events{
+    background-color: $color-bg-grey;
+    &--container{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        column-gap: 2rem;
+        @include tablet {
+            grid-template-columns: 2fr 1fr;
+        };
+    }
+
+    &__right{
+        text-align: left;
+        @include tablet {
+            text-align: right;
+        };
+    }
+}
+.hp-gallery{
+    display: grid;
+    grid-template-columns: 1fr;
+    @include biggerLaptop {
+        grid-template-columns: 1fr 1fr 1fr;
+    };
+    row-gap: 3rem;
+    column-gap: 3rem;
+    &--only-2{
+        @include biggerLaptop {
+            grid-template-columns: 1fr 1fr !important;
+            row-gap: 5rem;
+            column-gap: 5rem;
+        };
+    }
+    &--only-1{
+        @include biggerLaptop {
+            grid-template-columns: 1fr !important;
+            row-gap: 5rem;
+            column-gap: 5rem;
+        };
+    }
+    &__item{
+        img{
+            width: 100%;
+            max-height: 600px;
+        }
+        position: relative;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        /*
+        @include biggerLaptop {
+            max-width: none;
+        }; 
+*/
+        &__img{
+            filter: brightness(0.5);
+            aspect-ratio: 4/2;
+            @include biggerLaptop {
+                aspect-ratio: 400/500;
+            }; 
+            object-fit: cover;
+            &:hover{
+                filter: brightness(0.3);
+            }
+        }
+        &__content{
+            position: absolute;
+            bottom: 0;
+            padding: 2rem;
+            & * {
+                color: $color-white;
+            }
+            p{
+                opacity: 0.7;
+            }
+            a{
+                color: $color-white;
+                font-size: 1.8rem;
+                line-height: 1.8;
+            }
+            h3{
+                font-size: 2rem;
+                @include desktop {
+                    font-size: 2.6rem;
+                };
+            }
+        }
+        &__label{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .7rem;
+            min-width: 13rem;
+            min-height: 4rem;
+            @include tablet {
+                right: auto;
+                min-height: 10rem;
+                padding: 2rem;
+            };
+            @include largeScreen {
+                min-height: 13rem;
+            };
+            background-color: $color-submenu-el-hover;
+            & * {
+                color: $color-button-blue;
+            }
+            .item-label__day{
+                font-size: 2.3rem;
+                line-height: 3rem;
+                font-weight: 700;
+                @include largeScreen {
+                    font-size: 4rem;
+                    line-height: 6rem;
+                };
+            }
+            .item-label__month{
+                font-size: 1.5rem;
+                line-height: 2rem;
+                font-weight: 600;
+                @include largeScreen {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                };
+            }
+        }
+    }
+}
+
+.partners__gallery{
+    img{
+        margin: 1rem 3rem;
+    }
+}

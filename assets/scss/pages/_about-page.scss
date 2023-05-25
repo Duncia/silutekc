@@ -1,0 +1,28 @@
+.skc-about-section{
+    ul{
+        li{
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: $color-paragraph;
+            word-wrap: break-word;
+            margin-left: 2rem;
+            &::marker{
+                color: $color-white;
+            }
+        }
+        li:before{
+            content: "";
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: $color-yellow;
+            color: $color-yellow;
+            margin-right: 1rem;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.admin-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    };
+    @include biggerLaptop {
+        grid-template-columns: 1fr 1fr 1fr;
+    };
+    row-gap: 3rem;
+    column-gap: 3rem;
+    &__item{
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 3rem 2rem;
+        text-align: center;
+        background-color: $color-light-blue;
+    }
+    &__item:hover{
+        background-color: $color-white;
+    }
+}

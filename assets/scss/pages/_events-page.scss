@@ -1,0 +1,116 @@
+.events{
+
+    &__elements{
+        display: grid;
+        grid-template-columns: 1fr;
+        @include smallLaptop {
+            grid-template-columns: 1fr 1fr;
+        };
+        @include biggerLaptop {
+            grid-template-columns: 1fr 1fr 1fr;
+        };
+        
+        row-gap: 3rem;
+        column-gap: 3rem;
+    }
+}
+.event-element{
+    margin: auto;
+    position: relative;
+
+    &__image{
+        object-fit: cover;
+        aspect-ratio: 4/2;
+        @include tablet {
+            aspect-ratio: 600/300;
+        }; 
+        filter: brightness(0.5);
+        &--search{
+            max-width: 30rem;
+        }
+    }
+    &__content{
+        position: absolute;
+        left: 2rem;
+        bottom: 2rem;
+        &__tag{
+            color: $color-white;
+            opacity: 0.7;
+        }
+        &__title{
+            color: $color-white;
+            text-transform: uppercase;
+            padding-bottom: .5rem;
+        }
+        &__date{
+            color: $color-button-blue-hover;
+            padding: .5rem 1.5rem;
+            background-color: $color-submenu-el-hover;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: .2rem;
+            border-radius: 2.5rem;
+            display: inline-block;
+        }
+        &__button{
+            color: $color-white !important;
+            text-decoration: underline;
+            font-size: 1.8rem;
+        }
+    }
+    &:hover{
+        transform: scale(.99);
+    }
+}
+
+.events-filter{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include desktop {
+        grid-template-columns: repeat(6, 1fr);
+    };
+    justify-content: center;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    max-width: 600px;
+    @include desktop {
+        max-width: 1240px;
+    };
+    margin-left: auto;
+    margin-right: auto;
+    &__option{
+        cursor: pointer;
+        padding: 1rem;
+        @include smallLaptop {
+            padding: 2rem;
+        };
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .option__icon{
+            padding-bottom: 1rem;
+            svg {
+                max-width: 40px;
+                @include desktop {
+                    max-width: max-content
+                };
+            }
+        }
+        .option__title{
+            font-weight: 500;
+            font-size: 1.6rem;
+            @include smallLaptop {
+                font-size: 1.8rem;
+            };
+            line-height: 2.6rem;
+        }
+    }
+    &__option--active{
+        background-color: $color-submenu-el-hover;
+    }
+}
+.hide-event{
+    display: none;
+}

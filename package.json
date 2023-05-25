@@ -1,0 +1,22 @@
+{
+  "name": "siluteskc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build src/index.js assets/js/eventsPage.js",
+    "start": "wp-scripts start src/index.js assets/js/eventsPage.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IronCat-dev/Silute.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IronCat-dev/Silute/issues"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^24.5.0"
+  }
+}

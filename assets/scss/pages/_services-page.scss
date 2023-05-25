@@ -1,0 +1,172 @@
+.services-title{
+    display: flex;
+    align-items: center;
+    &__headline{
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    &__line{
+        font-size: 1.2rem;
+        border-bottom: 2px solid $color-button-blue;
+        width: 3rem;
+        margin-right: 1rem;
+    }
+}
+.premises-rent{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    column-gap: 3rem;
+    @include smallLaptop {
+        grid-template-columns: 1fr 1fr;
+    };
+    &__img{
+        display: flex;
+        justify-content: center;
+        @include smallLaptop {
+            display: block;
+        };
+    }
+
+    &__btn{
+        display: inline-block;
+        width: 100%;
+        max-width: 27rem;
+        .btn--white{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    &__btn:hover svg{
+        fill: $color-white;
+
+    }
+    .grid-order-1{
+        order: 1;
+        @include smallLaptop {
+            order: 0;
+        };
+    }
+}
+.container--schema{
+    padding: 4rem 2rem 2rem 2rem;
+    background-color: #FBFAFA;
+
+    .schema-block{
+        background-color: $color-white;
+        padding: 3rem 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        column-gap: 3rem;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+        @include biggerLaptop {
+            grid-template-columns: 1fr 2fr;      
+        };
+        align-items: start;
+        &__image{
+            text-align: center;
+        }
+    }
+
+}
+
+.services-form{
+    .services-departments{
+        display: grid;
+        grid-template-columns: 1fr;
+        @include desktop {
+            grid-template-columns: 1fr;
+        };
+        row-gap: 2rem;
+        column-gap: 2rem;
+        &__address{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: auto;
+            margin: auto;
+            @include smallLaptop {
+                grid-template-columns: 1fr;
+                width: auto;
+                margin: initial;
+            };
+            row-gap: 4rem;
+            column-gap: 2rem;
+            &__item{
+                h4{
+                    font-weight: 700;
+                    font-size: 2rem;
+                    color: $color-paragraph;
+                    padding-bottom: 1rem;
+                }
+                .address-item{
+                    display: flex;
+                    padding-bottom: 1rem;
+                    align-items: flex-start;
+                    svg {
+                        margin-top: 0.7rem;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        &__company-data{
+            .company-data__inner{
+                max-width: 45rem;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                padding: 1.5rem;
+                margin: auto;
+            }
+        }
+    }
+    form{
+        padding: 2rem !important;
+        background-color: #EFF6FF !important;
+        input, textarea {
+            background-color: #EFF6FF !important;
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-bottom: 1px solid #5C7EAA !important;            
+            font-size: 18px !important;
+            color: $color-paragraph !important;
+            font-family: 'Poppins', sans-serif !important;
+
+        }
+        textarea{
+            resize: vertical !important;
+        }
+        ::placeholder {
+            color: #1E1E1E !important;
+        }
+        .ff_btn_style{
+            display: inline-block !important;
+            width: 100% !important;
+            max-width: 27rem !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border: 1px solid #284366 !important;
+            background-color: #FFFFFF !important;
+            color: #284366 !important;
+            font-weight: 700 !important;
+            font-family: 'Poppins', sans-serif !important;
+            text-decoration: none !important;
+            outline: none !important;
+            min-width: 12rem !important;
+            font-size: 1.8rem !important;
+            padding: 1.5rem 4rem !important;
+            border-radius: 0 !important;
+        }
+        .ff-el-form-check-label span{
+            font-size: 1.4rem !important;
+            color: #284366 !important;
+        }
+    }
+}

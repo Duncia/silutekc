@@ -1,0 +1,80 @@
+.contacts-title{
+    display: flex;
+    align-items: center;
+    &__headline{
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    &__line{
+        font-size: 1.2rem;
+        border-bottom: 2px solid $color-button-blue;
+        width: 3rem;
+        margin-right: 1rem;
+    }
+}
+.contacts-departments{
+    display: grid;
+    grid-template-columns: 1fr;
+    @include desktop {
+        grid-template-columns: 2fr 1fr;
+    };
+    row-gap: 2rem;
+    column-gap: 2rem;
+    &__address{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: auto;
+        margin: auto;
+        @include smallLaptop {
+            grid-template-columns: 1fr 1fr;
+            width: auto;
+            margin: initial;
+        };
+        row-gap: 4rem;
+        column-gap: 2rem;
+        &__item{
+            h4{
+                font-weight: 700;
+                font-size: 2rem;
+                color: $color-paragraph;
+                padding-bottom: 1rem;
+            }
+            .address-item{
+                display: flex;
+                padding-bottom: 1rem;
+                align-items: flex-start;
+                svg {
+                    margin-top: 0.7rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+    &__company-data{
+        .company-data__inner{
+            max-width: 45rem;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            margin: auto;
+        }
+    }
+}
+
+.contact-cards-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    @include smallLaptop {
+        grid-template-columns: 1fr 1fr;
+    };
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
+    };
+    @include largeScreen {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    };
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+.fe-contact-card__rest p{
+    font-size: 1.5rem !important;
+}

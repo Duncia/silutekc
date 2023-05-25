@@ -1,0 +1,331 @@
+.container--header{
+    border-bottom: 2px solid $color-border-light-grey;
+    position: relative;
+}
+
+.header{
+    max-width: 1800px;
+    margin: auto;
+    padding: 2rem 0rem;
+    @media screen and (min-width: 580px) {
+        padding: 2rem 1rem;
+    }; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        justify-content: center;
+        margin-bottom: 0rem;
+
+        .logo-img{
+            max-width: 40px;
+            @include tablet {
+                max-width: 50px;
+            }; 
+            @include smallLaptop {
+                max-width: 60px;
+            }; 
+            @include largeScreen {
+                max-width: 65px;
+            }; 
+        }
+
+        .logo-title{
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+            font-size: 1.4rem;
+            color: #151515;
+            text-transform: uppercase;
+            max-width: 18rem;
+            margin-left: 1rem;
+            display: block;
+            @include smallLaptop {
+                display: block;
+            }; 
+            @include smallLaptop {
+                font-size: 1.7rem;
+                max-width: 25rem;
+            }; 
+            @include largeScreen {
+                font-size: 1.6rem;
+                max-width: 18rem;
+            }; 
+            .logo-subtitle{
+                font-size: 1rem;
+                display: none;
+                @media screen and (min-width: 610px) {
+                    display: block;
+                    padding-top: .5rem;
+                }; 
+                @include largeScreen {
+                    font-size: 1.1rem;
+                }; 
+            }
+        }
+    }
+    &__menu{
+        display: none;
+        @include largeScreen {
+            display: block;
+        };
+    }
+    &__sitemap-icon{
+        margin-left: 2rem;
+    }
+    &__search-icon{
+        margin-left: 2rem;
+        position: relative;
+        cursor: pointer;
+        margin-right: 2rem;
+        @media screen and (min-width: 580px) {
+            margin-right: 0rem;
+        }; 
+    }
+    &__main-search{
+        position: absolute;
+        left: auto;
+        right: -5rem;
+        top: 5rem;
+        @media screen and (min-width: 580px) {
+            left: -5rem;
+            right: auto;
+        }; 
+        white-space: nowrap;
+        background-color: #FFFFFF;
+        box-shadow: 0px 1px 2px 1px rgb(0 0 0 / 20%);
+        padding: 1rem;
+        display: none;
+        z-index: 50;
+
+        .main-search__form{
+            display: flex;
+
+            .main-seach-input{
+                border: none;
+                margin-left: 1.5rem;
+                font-size: 1.8rem;
+                line-height: 3.2rem;
+                color: $color-paragraph;
+            }
+            .main-seach-input::placeholder{
+                font-size: 18px;
+                color: $color-paragraph;
+            }
+            .main-seach-input:focus{
+                outline: none;
+            }
+            .main-search-button{
+                background-color: $color-white;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+    &__main-search--open{
+        display: block;
+    }
+
+}
+.navigation-top {
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            position: relative;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $color-black;
+            padding: 1rem 0rem;
+        }
+        li:not(:last-of-type){
+            margin-right: 2rem;
+        }
+        li a:hover{
+            color: $color-button-blue;
+        }
+    }
+    li.current_page_item a{
+        text-decoration:underline;
+        color: $color-button-blue;
+    }
+}
+.navigation-top ul li:hover .sub-menu{
+    display: block;
+    z-index: 10;
+}
+.navigation-top ul li .sub-menu{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    white-space: nowrap;
+    background-color: $color-white;
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.20);
+    li {
+        background-image: none;
+        background-color: $color-white;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        min-width: 18rem;
+        width: 100%;
+        &:hover{
+            background-color: $color-submenu-el-hover;
+        }
+        &:hover > a{
+            color: $color-button-blue;
+        }
+    }
+}
+.header__burger{
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    @include largeScreen {
+        display: none;
+    };
+    &__middle{
+        position: relative;
+        transition: all .2s;  
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 3px;
+            background-color: $color-black;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            transition: all .5s;
+        }
+        &::before {
+            top: -8px;
+        }
+        &::after {
+            top: 8px;
+        }
+    }
+    &__middle--active {
+        background-color: transparent !important;
+        &::before {
+            top: 0 !important;
+            transform: rotate(45deg);
+            transition: all .5s;
+        }
+        &::after {
+            top: 0 !important;
+            transform: rotate(-45deg);
+            transition: all .5s;
+        }
+    }
+}
+.mobile-menu{
+    background-color: #FAFAFA;
+    position: absolute;
+    top: 8rem;
+    @media screen and (min-width: 580px) {
+        top: 8rem;
+    }; 
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    padding-bottom: 7rem;
+    padding-top: 3rem;
+    justify-content: center;
+    transition: all .7s;
+    visibility: visible;
+    overflow: auto;
+    @include largeScreen {
+        display: none;
+    };
+
+    &--close {
+        left: -200%;
+        transition: all .7s;
+        visibility: hidden;
+    }
+
+    ul{
+        list-style: none;
+
+        li {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            color: $color-black;
+            
+            ul {
+                padding-top: 1.2rem;
+                li {
+                    padding-left: 2rem;
+                    font-size: 1.8rem;
+                }
+                li a:hover{
+                    color: $color-button-blue;
+                }
+            }
+        }
+        li a:hover{
+            color: $color-button-blue;
+        }
+    }
+}
+.mobile-menu__nav ul li .sub-menu{
+    li {
+        padding-left: 2rem;
+        font-size: 1.8rem;
+    }
+    li a:hover{
+        color: $color-paragraph;
+    }
+}
+.header__right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__calendar{
+    display: none;
+    @media screen and (min-width: 580px) {
+        display: flex;
+    }; 
+    align-items: center;
+    background-color: $color-button-blue;
+    border: 1px solid $color-button-blue;
+    padding: 0.5rem 2rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    @include largeScreen {
+        margin-left: 2rem;
+        margin-right: 0rem;
+    };
+    cursor: pointer;
+    .calendar--text{
+        color: $color-white;
+        font-weight: 700;
+        font-size: 1.6rem;
+        margin-left: 0.5rem;
+        @include largeScreen {
+            font-size: 1.8rem
+        }; 
+    }
+    &:hover{
+        background-color: $color-white;
+    }
+}
+.header__calendar:hover .calendar--text{
+    color: $color-button-blue;
+}
+.header__calendar:hover svg path{
+    fill: $color-button-blue;
+}

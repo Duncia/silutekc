@@ -1,0 +1,83 @@
+.newsletter-block{
+    background-color: $color-light-blue;
+
+    .newsletter{
+        align-items: center;
+        &__left{
+            &--title{
+                display: flex;
+                svg{
+                    margin-right: 1rem;
+                }
+            }
+        }
+        &__right{
+            text-align: left;
+            @include smallLaptop {
+                text-align: right;
+            };
+            .newsletter__btn{
+                display: inline-block;
+            
+                p{
+                    display: flex;
+                    align-items: center;
+                    span{
+                        margin-right: 1.5rem;
+                    }
+                }
+            }
+            .newsletter__btn:hover svg{
+                fill: $color-button-blue;
+
+            }
+        }
+    }
+}
+.newsletter-overlay{
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content{
+        max-width: 50rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3rem;
+        background-color: $color-white;
+        word-break: break-all;
+        @include tablet {
+            word-break:normal;
+        };
+    }
+    .subscribe-newsletter-form{
+        &__input{
+            border: 1px solid $color-paragraph;
+            font-size: 1.8rem;
+            line-height: 3.2rem;
+            color: $color-paragraph;
+            padding: .2rem 1rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        &__input::placeholder{
+
+            font-size: 18px;
+            color: $color-paragraph;
+        }
+        &__input:focus{
+            outline: none;
+        }
+    }
+}
+.newsletter-overlay--close{
+    display: none;
+    z-index: -5;
+}

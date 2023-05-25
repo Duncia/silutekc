@@ -1,0 +1,31 @@
+.news-single{
+
+    &__title{
+        max-width: 1240px;
+        @include veryBigScreen {
+            max-width: 1640px;
+        };
+        margin: auto;
+        text-align: center;
+        @include tablet {
+            text-align: left
+        }; 
+    }
+
+    &__top-img{
+        object-fit: cover;
+        aspect-ratio: 4/2;
+        @include tablet {
+            aspect-ratio: 1200/300;
+        }; 
+    }
+    a{
+        text-decoration: underline !important;
+    }
+    .wp-block-gallery{
+        .wp-block-image{
+            padding: 2rem;
+            max-width: 25rem !important;
+        }
+    }
+}
