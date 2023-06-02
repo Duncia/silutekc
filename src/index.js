@@ -78,7 +78,7 @@ if(slides.length !== 0 || dotContainer !== undefined){
 ------------Header calendar-------------
 */
 const wpBaseUrl = document.location.origin;
-const wpAllEventsUrl = wpBaseUrl +'/silutefinal/wp-json/wp/v2/events?_embed';
+const wpAllEventsUrl = wpBaseUrl +'/wp-json/wp/v2/events?_embed';
 let eventsDataArr;
 async function fetchEvents(){
   const response = await fetch(wpAllEventsUrl);
@@ -141,11 +141,26 @@ fetchEvents()
         daysTag.innerHTML = liTag;
 
         const everyDaysLi = document.querySelectorAll(".singleDay");
+
         everyDaysLi.forEach((liItem) => {
           liItem.addEventListener('click', () => {
+            calendarEventsPreview.innerHTML = "";
             if(liItem.classList.contains("hasEvents")){
               for(let n = 0; n < eventsDataArr.length; n++){
                 if(eventsDataArr[n].acf.event_date == liItem.dataset.date){
+                  calendarEventsPreview.insertAdjacentHTML('beforeend', `<div class="calendar-events-preview-block">
+                  <div class="calendar-events-preview__img">
+                    <a href="${eventsDataArr[n].link}">
+                      <img src="${eventsDataArr[n]._embedded['wp:featuredmedia']['0'].source_url}" />
+                    </a>
+                  </div>
+                  <div class="calendar-events-preview__content">
+                    <p>${eventsDataArr[n]._embedded['wp:term']['0']['0'].name}</p>
+                    <h4>${eventsDataArr[n].acf.events_single_title_top}</h4>
+                    <a href="${eventsDataArr[n].link}"><p>Plačiau</p></a>
+                  </div></div>
+                  `);
+                  /*
                   calendarEventsPreview.innerHTML = `
                   <div class="calendar-events-preview__img">
                     <a href="${eventsDataArr[n].link}">
@@ -157,7 +172,9 @@ fetchEvents()
                     <h4>${eventsDataArr[n].acf.events_single_title_top}</h4>
                     <a href="${eventsDataArr[n].link}"><p>Plačiau</p></a>
                   </div>
-                  `
+                  `;
+                  */
+                  
                 }
               }
             } else {

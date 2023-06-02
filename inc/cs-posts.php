@@ -59,6 +59,106 @@ function siluteskc_post_types() {
             'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats', 'custom-fields'
         )
 	));
+    register_post_type('legalinfo', array(
+        'rewrite' => array('slug' => 'teisine-informacija','with_front' => false),
+		'public' => true,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'menu_position' => 10,
+        'taxonomies' => ['category', 'post_tag'],
+		'labels' => array(
+			'name' => 'Teisinė info / Legal',
+            'add_new_item' => 'Pridėti / Add',
+            'edit_item' => 'Redaguoti / Edit',
+            'all_items' => 'Visi / All',
+            'singular_name' => 'Teisė'
+		),
+		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-bank',
+        'supports' => array(
+            'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats', 'custom-fields'
+        )
+	));
+    register_post_type('budgetinfo', array(
+        'rewrite' => array('slug' => 'biudzeto-informacija','with_front' => false),
+		'public' => true,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'menu_position' => 10,
+        'taxonomies' => ['category', 'post_tag'],
+		'labels' => array(
+			'name' => 'Biudžeto rinkiniai / Budget',
+            'add_new_item' => 'Pridėti / Add',
+            'edit_item' => 'Redaguoti / Edit',
+            'all_items' => 'Visi / All',
+            'singular_name' => 'Biudžetas'
+		),
+		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-calculator',
+        'supports' => array(
+            'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats', 'custom-fields'
+        )
+	));
+    register_post_type('financeinfo', array(
+        'rewrite' => array('slug' => 'finansine-informacija','with_front' => false),
+		'public' => true,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'menu_position' => 10,
+        'taxonomies' => ['category', 'post_tag'],
+		'labels' => array(
+			'name' => 'Finansinė info / Finance',
+            'add_new_item' => 'Pridėti / Add',
+            'edit_item' => 'Redaguoti / Edit',
+            'all_items' => 'Visi / All',
+            'singular_name' => 'Finansai'
+		),
+		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-money-alt',
+        'supports' => array(
+            'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats', 'custom-fields'
+        )
+	));
+    register_post_type('workinfo', array(
+        'rewrite' => array('slug' => 'darbo-uzmokestis','with_front' => false),
+		'public' => true,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'menu_position' => 10,
+        'taxonomies' => ['category', 'post_tag'],
+		'labels' => array(
+			'name' => 'Darbo užmokestis / Salaries',
+            'add_new_item' => 'Pridėti / Add',
+            'edit_item' => 'Redaguoti / Edit',
+            'all_items' => 'Visi / All',
+            'singular_name' => 'Darbo užmokestis'
+		),
+		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-chart-line',
+        'supports' => array(
+            'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats', 'custom-fields'
+        )
+	));
+    register_post_type('planninginfo', array(
+        'rewrite' => array('slug' => 'planavimas','with_front' => false),
+		'public' => true,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'menu_position' => 10,
+        'taxonomies' => ['category', 'post_tag'],
+		'labels' => array(
+			'name' => 'Planavimas / Planning',
+            'add_new_item' => 'Pridėti / Add',
+            'edit_item' => 'Redaguoti / Edit',
+            'all_items' => 'Visi / All',
+            'singular_name' => 'Planavimas'
+		),
+		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-randomize',
+        'supports' => array(
+            'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats', 'custom-fields'
+        )
+	));
     register_post_type('gallery', array(
         'rewrite' => array('slug' => 'galerija','with_front' => false),
 		'public' => true,

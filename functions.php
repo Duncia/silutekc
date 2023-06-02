@@ -26,6 +26,9 @@ function siluteskc_js_css_files() {
     if(is_page_template('pg-events.php')){
       wp_enqueue_script('eventspage', get_theme_file_uri('/build/eventsPage.js'), array('jquery'), '1.0.0', true);
     }
+    if(is_page_template('pg-gallery.php')){
+      wp_enqueue_script('gallerypage', get_theme_file_uri('/build/galleryPage.js'), array('jquery'), '1.0.0', true);
+    }
   }
 add_action('wp_enqueue_scripts', 'siluteskc_js_css_files');
 

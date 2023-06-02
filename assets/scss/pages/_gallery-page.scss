@@ -34,7 +34,7 @@
             .skc-single__title{
                 position: absolute;
                 color: $color-white;
-                z-index: 10;
+                z-index: 6;
                 padding: 2rem;
                 color: $color-button-blue;
                 background-color: $color-submenu-el-hover;
@@ -55,13 +55,15 @@
                     opacity: 0.7;
                 }
                 a{
-                    color: $color-white;
+                    color: $color-black;
                     font-size: 1.8rem;
                     line-height: 1.8;
-                    text-decoration: underline;
+                    background-color: $color-white;
+                    padding: .5rem 2rem;
                 }
                 h3{
                     font-size: 2rem;
+                    padding-bottom: 1rem;
                     @include desktop {
                         font-size: 2.6rem;
                     };
@@ -115,4 +117,27 @@
 }
 .skc-gal .skc-gallery__item:hover > picture .skc-gallery__item__img{
     filter: brightness(0.3);
+}
+.gallery-year-tabs{
+    padding-bottom: 3rem;
+}
+.gallery-year-tab{
+    font-size: 2.5rem;
+    color: $color-black;
+    font-weight: 700;
+    background-color: $color-light-blue;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    padding: .5rem 2rem;
+    min-width: 12rem;
+    text-align: center;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.gallery-year-tab--active{
+    background-color: $color-white;
+}
+.gallery-year-tab-hide{
+    display: none;
 }

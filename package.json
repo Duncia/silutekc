@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build src/index.js assets/js/eventsPage.js",
-    "start": "wp-scripts start src/index.js assets/js/eventsPage.js"
+    "build": "wp-scripts build src/index.js assets/js/eventsPage.js assets/js/galleryPage.js",
+    "start": "wp-scripts start src/index.js assets/js/eventsPage.js assets/js/galleryPage.js"
   },
   "repository": {
     "type": "git",

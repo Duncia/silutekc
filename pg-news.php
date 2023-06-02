@@ -61,7 +61,7 @@ News page template
                 <div class="news-gallery__item__content">
                     <h4 class="pb-sm news-single__title"><?php echo get_the_date(); ?></h4>
                     <div class="item-content__split">
-                        <h3><?php the_title(); ?></h3>
+                    <a href="<?php the_permalink(); ?>"  style="text-decoration:none;"><h3><?php the_title(); ?></h3></a>
                         <a href="<?php the_permalink(); ?>"><?php _e('Learn more', 'siluteskc'); ?></a>
                     </div>
                 </div>

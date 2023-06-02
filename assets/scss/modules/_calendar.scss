@@ -121,7 +121,7 @@
     }
   }
   .calendar-events-preview{
-    display: flex;
+    /*display: flex;*/
     padding: 0rem 2rem 2rem 2rem;
     &__img{
         margin-right: 2rem;
@@ -141,6 +141,10 @@
             color: $color-button-blue;
             text-decoration: underline;
         }
+    }
+    .calendar-events-preview-block{
+        display: flex;
+        margin-bottom: 2rem;
     }
   }
   .calendar-wrapper--hide{

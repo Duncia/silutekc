@@ -47,7 +47,7 @@ Contacts page template
                         <path d="M12.8822 9.1894C12.0247 9.1894 11.1828 9.05534 10.3849 8.79178C9.99396 8.65849 9.51337 8.78077 9.27476 9.02573L7.69999 10.2141C5.8737 9.23956 4.74874 8.11541 3.78718 6.30354L4.94099 4.77039C5.24075 4.47114 5.34827 4.03401 5.21945 3.62385C4.95466 2.82213 4.82015 1.98093 4.82015 1.12343C4.82019 0.503963 4.31603 0 3.69636 0H1.12432C0.504648 0 0.000488281 0.503964 0.000488281 1.12339C0.000488281 8.22365 5.77913 14 12.8822 14C13.5018 14 14.006 13.496 14.006 12.8766V10.3127C14.0059 9.69336 13.5018 9.1894 12.8822 9.1894Z" fill="#FFB23F"/>
                         </svg>
                         <?php if(get_field('silute_kc_mobile')): ?>
-                            <p><?php the_field('silute_kc_mobile'); ?></p>
+                            <p><a href="tel:<?php the_field('silute_kc_mobile'); ?>"><?php the_field('silute_kc_mobile'); ?></a></p>
                         <?php endif; ?>  
                     </div>
                     <div class="address-item">
@@ -85,7 +85,7 @@ Contacts page template
                         <path d="M12.8822 9.1894C12.0247 9.1894 11.1828 9.05534 10.3849 8.79178C9.99396 8.65849 9.51337 8.78077 9.27476 9.02573L7.69999 10.2141C5.8737 9.23956 4.74874 8.11541 3.78718 6.30354L4.94099 4.77039C5.24075 4.47114 5.34827 4.03401 5.21945 3.62385C4.95466 2.82213 4.82015 1.98093 4.82015 1.12343C4.82019 0.503963 4.31603 0 3.69636 0H1.12432C0.504648 0 0.000488281 0.503964 0.000488281 1.12339C0.000488281 8.22365 5.77913 14 12.8822 14C13.5018 14 14.006 13.496 14.006 12.8766V10.3127C14.0059 9.69336 13.5018 9.1894 12.8822 9.1894Z" fill="#FFB23F"/>
                         </svg>
                         <?php if(get_field('sveksna_mobile')): ?>
-                            <p><?php the_field('sveksna_mobile'); ?></p>
+                            <p><a href="tel:<?php the_field('sveksna_mobile'); ?>"><?php the_field('sveksna_mobile'); ?></a></p>
                         <?php endif; ?>  
                     </div>
                     <div class="address-item">
@@ -115,7 +115,7 @@ Contacts page template
                         <path d="M12.8822 9.1894C12.0247 9.1894 11.1828 9.05534 10.3849 8.79178C9.99396 8.65849 9.51337 8.78077 9.27476 9.02573L7.69999 10.2141C5.8737 9.23956 4.74874 8.11541 3.78718 6.30354L4.94099 4.77039C5.24075 4.47114 5.34827 4.03401 5.21945 3.62385C4.95466 2.82213 4.82015 1.98093 4.82015 1.12343C4.82019 0.503963 4.31603 0 3.69636 0H1.12432C0.504648 0 0.000488281 0.503964 0.000488281 1.12339C0.000488281 8.22365 5.77913 14 12.8822 14C13.5018 14 14.006 13.496 14.006 12.8766V10.3127C14.0059 9.69336 13.5018 9.1894 12.8822 9.1894Z" fill="#FFB23F"/>
                         </svg>
                         <?php if(get_field('mokslo_plc_mobile')): ?>
-                            <p><?php the_field('mokslo_plc_mobile'); ?></p>
+                            <p><a href="<?php the_field('mokslo_plc_mobile'); ?>"><?php the_field('mokslo_plc_mobile'); ?></a></p>
                         <?php endif; ?> 
                     </div>
                     <div class="address-item">
@@ -147,6 +147,17 @@ Contacts page template
         </div>
     </div>
 </section>
+
+<?php if(get_field('control_structure')): ?>
+<section class="container">
+    <div class="container__inner">
+        <div class="contacts-title pb-md">
+            <div class="contacts-title__line"></div>
+            <h3 class="contacts-title__headline" style="text-decoration:underline;"><a href="<?php the_field('control_structure'); ?>" target="_blank"><?php the_field('control_structure_text'); ?></a></h3>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
 
 <section class="container">
     <div class="container__inner">
